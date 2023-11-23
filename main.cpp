@@ -5,19 +5,21 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+/**
+ * Deklarasi fungsi yang digunakan
+ */
 void pause();
-
 void clearScreen();
-
 float penjumlahan();
-
 float hitungLuasSegitiga();
-
 float hitungKelilingSegitiga();
 
+/**
+ * Fungsi utama yang akan dieksekusi
+ */
 int main() {
-  int pilihan;
-  float hasil;
+  int pilihan_081;
+  float hasil_081;
 
   do {
     cout << "Selamat datang di calculator segitiga" << endl;
@@ -29,24 +31,24 @@ int main() {
     cout << "4. Keluar" << endl;
     cout << "====================================" << endl;
     cout << "Masukkan pilihan: ";
-    cin >> pilihan;
+    cin >> pilihan_081;
 
     clearScreen();
 
-    switch (pilihan) {
+    switch (pilihan_081) {
       case 1:
-        hasil = hitungLuasSegitiga();
-        cout << "Luas segitiga adalah: " << hasil << endl;
+        hasil_081 = hitungLuasSegitiga();
+        cout << "Luas segitiga adalah: " << hasil_081 << endl;
         pause();
         break;
       case 2:
-        hasil = hitungKelilingSegitiga();
-        cout << "Keliling segitiga adalah: " << hasil << endl;
+        hasil_081 = hitungKelilingSegitiga();
+        cout << "Keliling segitiga adalah: " << hasil_081 << endl;
         pause();
         break;
       case 3:
-        hasil = penjumlahan();
-        cout << "Hasil penjumlahan adalah: " << hasil << endl;
+        hasil_081 = penjumlahan();
+        cout << "Hasil penjumlahan adalah: " << hasil_081 << endl;
         pause();
         break;
       case 4:
@@ -56,7 +58,7 @@ int main() {
         cout << "Pilihan tidak tersedia" << endl;
         break;
     }
-  } while (pilihan != 4);
+  } while (pilihan_081 != 4);
 
   return 0;
 }
@@ -66,42 +68,48 @@ void clearScreen() {
 }
 
 void pause() {
-  cout << "Tekan tombol apapun untuk melanjutkan...";
+  cout << "\nTekan tombol apapun untuk melanjutkan...";
   getch();
   clearScreen();
 }
 
 float penjumlahan() {
-  float angka1, angka2;
+  float angka1_081, angka2_081;
 
-  cout << "Masukkan angka pertama: ";
-  cin >> angka1;
-  cout << "Masukkan angka kedua: ";
-  cin >> angka2;
+  do {
+    cout << "Masukkan angka pertama: ";
+    cin >> angka1_081;
+    cout << "Masukkan angka kedua: ";
+    cin >> angka2_081;
+  } while (angka1_081 < 0 || angka2_081 < 0);
 
-  return angka1 + angka2;
+  return angka1_081 + angka2_081;
 }
 
 float hitungLuasSegitiga() {
-  float alas, tinggi;
+  float alas_081, tinggi_081;
 
-  cout << "Masukkan alas: ";
-  cin >> alas;
-  cout << "Masukkan tinggi: ";
-  cin >> tinggi;
+  do {
+    cout << "Masukkan alas: ";
+    cin >> alas_081;
+    cout << "Masukkan tinggi: ";
+    cin >> tinggi_081;
+  } while (alas_081 < 0 || tinggi_081 < 0);
 
-  return 0.5 * alas * tinggi;
+  return 0.5 * alas_081 * tinggi_081;
 }
 
 float hitungKelilingSegitiga() {
-  float sisi1, sisi2, sisi3;
+  float sisi1_081, sisi2_081, sisi3_081;
 
-  cout << "Masukkan sisi 1: ";
-  cin >> sisi1;
-  cout << "Masukkan sisi 2: ";
-  cin >> sisi2;
-  cout << "Masukkan sisi 3: ";
-  cin >> sisi3;
+  do {
+    cout << "Masukkan sisi 1: ";
+    cin >> sisi1_081;
+    cout << "Masukkan sisi 2: ";
+    cin >> sisi2_081;
+    cout << "Masukkan sisi 3: ";
+    cin >> sisi3_081;
+  } while (sisi1_081 < 0 || sisi2_081 < 0 || sisi3_081 < 0);
 
-  return sisi1 + sisi2 + sisi3;
+  return sisi1_081 + sisi2_081 + sisi3_081;
 }
