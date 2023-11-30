@@ -5,6 +5,11 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+/** 
+ * Deklarasi variable global
+ */
+const float PI_081 = 3.14;
+
 /**
  * Deklarasi fungsi yang digunakan
  */
@@ -12,7 +17,7 @@ void pause();
 void clearScreen();
 float penjumlahan();
 float hitungLuasSegitiga();
-float hitungKelilingSegitiga();
+float hitungKelilingLingkaran();
 
 /**
  * Fungsi utama yang akan dieksekusi
@@ -26,7 +31,7 @@ int main() {
     cout << "====================================" << endl;
     cout << "Pilih menu yang diinginkan: " << endl;
     cout << "1. Hitung luas segitiga" << endl;
-    cout << "2. Hitung keliling segitiga" << endl;
+    cout << "2. Hitung keliling lingkaran" << endl;
     cout << "3. Penjumlahan" << endl;
     cout << "4. Keluar" << endl;
     cout << "====================================" << endl;
@@ -42,8 +47,8 @@ int main() {
         pause();
         break;
       case 2:
-        hasil_081 = hitungKelilingSegitiga();
-        cout << "Keliling segitiga adalah: " << hasil_081 << endl;
+        hasil_081 = hitungKelilingLingkaran();
+        cout << "Keliling lingkaran adalah: " << hasil_081 << endl;
         pause();
         break;
       case 3:
@@ -99,17 +104,13 @@ float hitungLuasSegitiga() {
   return 0.5 * alas_081 * tinggi_081;
 }
 
-float hitungKelilingSegitiga() {
-  float sisi1_081, sisi2_081, sisi3_081;
+float hitungKelilingLingkaran() {
+  float jariJari_081;
 
   do {
-    cout << "Masukkan sisi 1: ";
-    cin >> sisi1_081;
-    cout << "Masukkan sisi 2: ";
-    cin >> sisi2_081;
-    cout << "Masukkan sisi 3: ";
-    cin >> sisi3_081;
-  } while (sisi1_081 < 0 || sisi2_081 < 0 || sisi3_081 < 0);
+    cout << "Masukkan jari-jari: ";
+    cin >> jariJari_081;
+  } while (jariJari_081 < 0);
 
-  return sisi1_081 + sisi2_081 + sisi3_081;
+  return 2 * PI_081 * jariJari_081;
 }
